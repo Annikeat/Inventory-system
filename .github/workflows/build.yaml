@@ -1,19 +1,25 @@
-name: Testing for Practice
+name: Test the Code
 
-on:
+on: 
   push:
-    branches:
-       - main
+      branches:
+        - main
 
 jobs:
-   build:
-      runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-      steps:
-         - name: Checkout Code
-           uses: actions/checkout@v4
-         
-         - name: Build the code
-           run: echo "Run this build."
+    env:
+      MY_NAME: "Aniket"
+      BUILD_TYPE: "Practice Mode"
+      
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-                
+      - name: Build
+        run: | 
+          echo "This is build code."
+          echo "My name is: $MY_NAME"
+          echo "This code is build for: $BUILD_TYPE"
+ 
