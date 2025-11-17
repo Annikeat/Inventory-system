@@ -1,12 +1,19 @@
-name: Test runner connection.
+name: Testing for Practice
 
-on: 
-   workflow_dispatch:
+on:
+  push:
+    branches:
+       - main
 
 jobs:
-  build:
-    runs-on: self-hosted
-    steps: 
-      - uses: actions/checkout@v4
-      - name: Print Message
-        run: echo "Running on Self-hosted runner."
+   build:
+      runs-on: ubuntu-latest
+
+      steps:
+         - name: Checkout Code
+           uses: actions/checkout@v4
+         
+         - name: Build the code
+           run: echo "Run this build."
+
+                
