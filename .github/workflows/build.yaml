@@ -17,19 +17,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build
-        run: echo "Building the code"
+        run: echo "Building the code" | tee -a run.log
 
       - name: Test
-        run: echo "Testing the code by, $MY_NAME" > output.txt
+        run: echo "Testing the code by, $MY_NAME" | tee -a run.log
       
       - name: Deploy
-        run: echo "Deployment of the code is done by, $DEPLOY" > output.txt
+        run: echo "Deployment of the code is done by, $DEPLOY" | tee -a run.log
 
       - name: Create Output file
-        run: echo "This artifacts file is created by $DEVELOPER" > output.txt
+        run: echo "This artifacts file is created by $DEVELOPER" | tee -a run.log
 
       - name: Upload the file as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: my-output-file
-          path: output.txt
+          name: Log-file
+          path: run.log
