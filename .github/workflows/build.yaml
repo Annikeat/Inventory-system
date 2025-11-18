@@ -8,16 +8,28 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      MY_NAME: "Aniket"
+      DEVELOPER: "Aniket"
       BUILD_TYPE: "Practice Mode"
+      DEPLOY: "Sachin"
       
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Build
-        run: | 
-          echo "This is build code."
-          echo "My name is: $MY_NAME"
-          echo "This code is build for: $BUILD_TYPE"
- 
+        run: echo "Building the code"
+
+      - name: Test
+        run: echo "Testing the code by, $MY_NAME"
+      
+      - name: Deploy
+        run: echo "Deployment of the code is done by, $DEPLOY"
+
+      - name: Create Output file
+        run: echo "This artifacts file is created by $DEVELOPER" > output.txt
+
+      - name: Upload the file as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-output-file
+          path: output.txt
