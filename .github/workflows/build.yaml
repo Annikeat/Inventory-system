@@ -12,6 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}    
         
     env:
+      MY_NAME: "Sid"
       DEVELOPER: "Aniket"
       BUILD_TYPE: "Practice Mode"
       DEPLOY: "Sachin"
@@ -19,6 +20,11 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Secret Step
+        if: env.MY_NAME == 'Aniket'
+        run: echo "Hello Aniket!"
+
 
       - name: Show OS
         run: echo "The code is running on OS :${{ matrix.os }}" | tee -a run.log 
