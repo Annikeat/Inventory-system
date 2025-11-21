@@ -1,1 +1,4 @@
 name: Inventory System.
+
+on: 
+   workflow_dispatch:
