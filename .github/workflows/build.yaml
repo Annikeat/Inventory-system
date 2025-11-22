@@ -3,7 +3,7 @@ name: Build Frontend & Backend Images
 on:
   push:
     branches:
-      - main   # Run when code is pushed to master
+      - main   # Run when code is pushed to main
 
 jobs:
   build:
