@@ -30,8 +30,8 @@ jobs:
           context: ./frontend
           push: true
           tags: |
-            aniketjok/inventory/frontend:${{ env.TAG }}
-            aniketjok/inventory/frontend:latest
+            aniketjok/inventory-frontend:${{ env.TAG }}
+            aniketjok/inventory-frontend:latest
 
       # ---------------- BACKEND ----------------
       - name: Build & Push Backend Image
@@ -40,6 +40,6 @@ jobs:
           context: ./backend
           push: true
           tags: |
-            aniketjok/inventory/backend:${{ env.TAG }}
-            aniketjok/inventory/backend:latest
+            aniketjok/inventory-backend:${{ env.TAG }}
+            aniketjok/inventory-backend:latest
 
