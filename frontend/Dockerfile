@@ -9,4 +9,4 @@ COPY . /usr/share/nginx/html
 EXPOSE 80
 
 # Start Nginx in foreground (default command
-CMD [ "nginx", "-g", "deamon off;" ]
+CMD [ "nginx", "-g", "daemon off;" ]
